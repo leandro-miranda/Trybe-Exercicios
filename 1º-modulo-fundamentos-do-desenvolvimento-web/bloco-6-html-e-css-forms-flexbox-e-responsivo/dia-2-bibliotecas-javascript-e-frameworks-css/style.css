@@ -1,0 +1,80 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: none;
+}
+
+body {
+  background-color: rgb(237, 231, 231);
+  color: black;
+  font-size: 16px;
+  line-height: 1.3;
+  font-family: Helvetica, sans-serif;
+  box-shadow: 15px 10px 10px black;
+}
+
+h1 {
+  font-size: 30px;
+  margin-bottom: 20px;
+} 
+#header {
+  background-color: rgb(199, 193, 193);
+  text-align: center;
+  width: 100%;
+  margin: 40px 0;
+  padding: 50px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.container {
+  background-color: rgb(199, 193, 193);
+  width: 100%;
+  padding: 20px;
+  margin: 0 auto 10px auto;
+}
+
+.forms input[type="text"] {
+  background-color: rgb(199, 193, 193);
+  border: 1px solid black;
+  width: 90%;
+  padding: 7px;
+  font-size: 15px;
+  font-family: sans-serif;
+}
+
+.forms label {
+  margin-top: 15px;
+}
+
+.forms input[type="email"] {
+  background-color: rgb(199, 193, 193);
+  border: 1px solid black;
+  width: 90%;
+  padding: 7px;
+  font-size: 15px;
+  font-family: sans-serif;
+}
+
+#destination {
+  padding: 5px;
+  margin-left: 25px;
+}
+
+textarea {
+  resize: none;
+  padding: 5px;
+}
+
+#text-area-1 {
+  font-size: 15px;
+  font-family: sans-serif;
+  width: 100%;
+  padding: 7px;
+}
+
+.trybe-trip {
+  padding: 7px;
+  margin-right: auto;
+}
+

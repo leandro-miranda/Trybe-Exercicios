@@ -1,0 +1,61 @@
+header {
+  text-align: center;
+  font-size: 20px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  padding: 1%;
+}
+
+body {
+  font-size: 19px;
+  font-weight: normal;
+  letter-spacing: 1px;
+  line-height: 33px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: justify;
+  margin-left: 2%;
+  margin-right: 2%;
+}
+
+.center {
+  margin: 0 auto;
+}
+
+nav,
+aside,
+footer,
+section {
+  border-bottom: 2px gray solid;
+}
+
+img {
+  display: block;
+  max-width: 50%;
+}
+
+table,
+tr,
+td {
+  border: 1px solid
+}
+
+table {
+  width: 100%;
+}
+
+.stylecabecalho {
+  display: inline-block;
+  width: 400px;
+  text-align: center;
+}
+
+aside {
+  font-size: 20px;
+  font-style: italic;
+  font-weight: 700;
+}
+
+footer {
+  font-size: 30px;
+  text-align: center;
+  font-weight: 700;
+}

@@ -1,0 +1,48 @@
+body {
+  font-size: 16px;
+}
+
+h1 {
+  font-size: 65px;
+  color: orange;
+  font-family: sans-serif;
+  text-align: center;
+  font-style: italic;
+  text-decoration: underline;
+}
+
+p {
+  font-weight: 600px;
+  font-size: 3em;
+}
+
+ul {
+  line-height: 25px;
+  text-align: left;
+  list-style-position: inside;
+  padding-left: 1px
+}
+
+#red {
+  background-color: red;
+  padding-left: 10px;
+}
+
+#green {
+  background-color: green;
+  padding-left: 10px;
+}
+
+#black {
+  background-color: black;
+  color: white;
+  padding-left: 10px;
+}
+
+.fundo-style {
+  text-align: justify;
+  background-color: black;
+  color: white;
+  line-height: 25px;
+  height: 80px;
+}

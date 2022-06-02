@@ -1,0 +1,46 @@
+header {
+  text-align: center;
+}
+
+.esqcima {
+  width: 180px;
+  height: 180px;
+  background-color: red;
+  display: block;
+  background-image: url(imagens/download.jpeg);
+}
+
+.esqbaixo {
+  width: 180px;
+  height: 180px;
+  background-color: green;
+  display: inline-block;
+  background-image: url(imagens/download\ \(1\).jpeg);
+}
+
+.dircima {
+  width: 180px;
+  height: 180px;
+  background-color: black;
+  color: white;
+  margin-left: 1130px;
+  margin-top: -375px;
+  background-image: url(imagens/download\ \(2\).jpeg);
+}
+
+.dirbaixo {
+  width: 180px;
+  height: 180px;
+  background-color: orange;
+  margin-left: 1130px;
+  margin-top: -16px;
+  background-image: url(imagens/download\ \(3\).jpeg);
+}
+
+h2 {
+  color: white;
+}
+
+h2:hover {
+  color: red;
+}

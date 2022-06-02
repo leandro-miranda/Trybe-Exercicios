@@ -1,0 +1,23 @@
+{
+  "name": "trybe-exercicios",
+  "version": "1.0.0",
+  "description": "Este repositório contém todas as atividades de aprendizagem desenvolvidas por _[Leandro Miranda](linkedin.com/in/leandro-miranda-19a76031)_ enquanto estudava na [Trybe](https://www.betrybe.com/) :rocket:",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leandro-miranda/Trybe-exercicios.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/leandro-miranda/Trybe-exercicios/issues"
+  },
+  "homepage": "https://github.com/leandro-miranda/Trybe-exercicios#readme",
+  "dependencies": {
+    "node-fetch": "^2.6.7"
+  }
+}

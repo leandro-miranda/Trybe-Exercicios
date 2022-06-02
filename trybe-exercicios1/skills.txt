@@ -1,0 +1,6 @@
+JavaScript
+Bash
+Unix
+Internet
+HTML
+CSS

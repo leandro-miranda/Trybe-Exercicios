@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML e CSS Forms</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <form action="" method="get" class="container">
+    <main id="header">
+      <h1>Formulário para concorrer a uma viagem</h1>
+    </main>
+    <section>
+      <div class="forms">
+        <div class="line-container">
+          <label for="full-name">Nome:</label>
+          <input type="text" name="name" id="full-name" minlength="10" maxlength="40" required>
+        </div>
+      </div>
+      <div class="forms">
+        <div class="line-container">
+          <label for="e-mail">Email:</label>
+          <input type="email" name="email" id="e-mail" minlength="10" maxlength="50" required>
+        </div>
+      </div>
+      <br>
+      <div class="forms">
+        <div id="destination">
+          <legend>Destino Preferido:</legend>
+        </div>
+      </div>
+      <br>
+      <div class="forms">
+        <div class="line-container">
+          <label for="preferred-1">Cidade:</label>
+          <input type="radio" name="preferredDestination" id="preferred-1" value="cidade" checked>
+          <label for="preferred-2">Campo:</label>
+          <input type="radio" name="preferredDestination" id="preferred-2" value="campo">
+          <label for="preferred-3">Praia:</label>
+          <input type="radio" name="preferredDestination" id="preferred-3" value="praia">
+          <label for="preferred-4">Montanhas:</label>
+          <input type="radio" name="preferredDestination" id="preferred-4" value="montanhas">
+        </div>
+      </div>
+      <br>
+      <div class="forms">
+        <div class="line-container">
+          <fieldset class="trybe-trip">
+            <legend>TrypeTripe</legend>
+            <label for="text-area-1">Por que você deveria ganhar o concurso TrybeTrip?</label>
+            <textarea name="text" id="text-area-1" cols="45" rows="20" maxlength="500"
+              placeholder="Preencha seu texto aqui em até 500 caracteres" required></textarea>
+          </fieldset>
+        </div>
+      </div>
+      <br>
+      <div class="forms">
+        <div class="line-container">
+          <label for="date-1">Melhor data para viagem:</label>
+          <input type="date" name="data" id="date-1">
+        </div>
+      </div>
+      <br>
+      <div class="forms">
+        <div class="line-container">
+          <label for="click-1">Gostaria de receber outras incríveis oportunidades oferecidas pela Trybe?</label>
+          <input type="checkbox" name="selected-1" id="click-1" value="yes">
+        </div>
+      </div>
+      <br>
+      <div class="forms">
+        <div class="line-container">
+          <label for="click-2">Concorda em usar as imagens da sua viagem para divulgação de concursos futuros?</label>
+          <input type="checkbox" name="selected-2" id="click-2" value="yes">
+        </div>
+      </div>
+      <div class="forms">
+        <div class="line-container">
+          <label for=""></label>
+        </div>
+      </div>
+      <br>
+      <div class="line-container">
+        <button type="submit" id="button-btn" disabled>Enviar Formulário</button>
+        <button type="button" id="clear-button">Apagar informações</button>
+      </div>
+    </section>
+  </form>
+  <script src="script.js"></script>
+</body>
+
+</html>
