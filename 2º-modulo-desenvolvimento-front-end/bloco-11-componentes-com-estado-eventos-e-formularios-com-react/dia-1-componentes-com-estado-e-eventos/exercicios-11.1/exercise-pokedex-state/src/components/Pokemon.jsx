@@ -1,6 +1,6 @@
 import React from 'react';
 import { pokemonType } from '../types/index';
-import './pokemon.css';
+import '../styles/pokemon.css';
 
 class Pokemon extends React.Component {
   render() {
