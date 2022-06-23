@@ -1,7 +1,5 @@
 import React from 'react';
-import {
-  arrayOf,
-} from 'prop-types';
+import { arrayOf } from 'prop-types';
 
 import Pokemon from './Pokemon';
 import { pokemonType } from '../types/index';
@@ -28,13 +26,15 @@ class Pokedex extends React.Component {
 
   handleClickFilter = (filter) => {
     const { pokemons } = this.props;
-    const filteredPokemon = pokemons.filter((pokemon) => pokemon.type === filter);
+    const filteredPokemon = pokemons.filter(
+      (pokemon) => pokemon.type === filter,
+    );
     if (filter === 'All') {
       this.setState({ pokemons, index: 0 });
     } else {
       this.setState({ pokemons: filteredPokemon, index: 0 });
     }
-  }
+  };
 
   render() {
     const { index, pokemons } = this.state;
@@ -45,9 +45,11 @@ class Pokedex extends React.Component {
     ];
     return (
       <div className="pokedex">
-        {pokemons.map((pokemon) => (
-          <Pokemon key={ pokemon.id } pokemon={ pokemon } />
-        ))[index]}
+        {
+          pokemons.map((pokemon) => (
+            <Pokemon key={ pokemon.id } pokemon={ pokemon } />
+          ))[index]
+        }
         <div className="pokedex-buttons-panel">
           <Button
             className="filter-button"
