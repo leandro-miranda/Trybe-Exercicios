@@ -1,6 +1,6 @@
 import React from 'react';
 import { bool, func, node, string } from 'prop-types';
-import './button.css';
+import '../styles/button.css';
 
 const Button = ({ className, children, disabled, onClick }) => (
   <button
