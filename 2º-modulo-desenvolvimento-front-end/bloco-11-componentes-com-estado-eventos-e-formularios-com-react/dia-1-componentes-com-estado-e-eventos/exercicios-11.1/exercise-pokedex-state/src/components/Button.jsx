@@ -1,23 +1,28 @@
 import React from 'react';
-import { bool, func, node, string } from 'prop-types';
+import PropTypes from 'prop-types';
 import '../styles/button.css';
 
-const Button = ({ className, children, disabled, onClick }) => (
-  <button
-    onClick={ onClick }
-    className={ `button-text ${className}` }
-    disabled={ disabled }
-    type="button"
-  >
-    {children}
-  </button>
-);
+class Button extends React.Component {
+  render() {
+    const { name, func, disabled } = this.props;
+    return (
+      <button
+        type="button"
+        className="pokedex-button"
+        onClick={ func }
+        disabled={ disabled }
+      >
+        {name}
+
+      </button>
+    );
+  }
+}
 
 Button.propTypes = {
-  className: string.isRequired,
-  children: node.isRequired,
-  disabled: bool,
-  onClick: func.isRequired,
+  func: PropTypes.func.isRequired,
+  disabled: PropTypes.bool,
+  name: PropTypes.string.isRequired,
 };
 
 Button.defaultProps = {
