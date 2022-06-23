@@ -4,7 +4,7 @@ import {
 } from 'prop-types';
 
 import Pokemon from './Pokemon';
-import { pokemonType } from '../types';
+import { pokemonType } from '../types/index';
 import Button from './Button';
 import './pokedex.css';
 
