@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+const states = ['Rio de Janeiro', 'Minas Gerais', 'Amapá', 'Amazonas',
+  'São Paulo', 'Ceará', 'Distrito Federal'];
 
 export default class PersonalForm extends Component {
   render() {
@@ -52,8 +54,47 @@ export default class PersonalForm extends Component {
             name='city'
             maxLength='28'
             required
+            value={ currentState.city }
+            onBlur={() => {}}
             onChange={() => {}}
           />
+        </div>
+        <div className="container">
+          Estado:
+          <select
+            name='countryState'
+            required
+            onChange={() => { }}
+            defaultValue=''
+          >
+            <option value="Selecione"></option>
+            {
+              states.map((value, key) => (
+                <option key={key}>{value }</option>
+              ))
+            }
+          </select>
+        </div>
+        <div className="container">
+          <label htmlFor='house'>
+            <input
+              type='radio'
+              id='house'
+              name='addressType'
+              value='house'
+              onChange={() => {}}
+            />
+            Casa
+          </label>
+          <label htmlFor="apart">
+            <input
+              type='radio'
+              id='apart'
+              name='addressType'
+              value='apart'
+              onChange={() => {}}
+            />
+          </label>
         </div>
       </fieldset>
     )
