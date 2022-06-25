@@ -7,6 +7,7 @@ const states = ['Rio de Janeiro', 'Minas Gerais', 'Amapá', 'Amazonas',
 export default class Form extends Component {
   render() {
     const { name, address } = this.state;
+    const { onHandleChange, onHandleBlur } = this.props;
      return (
       <fieldset>
         <legend>Dados Pessoais</legend>
@@ -18,7 +19,7 @@ export default class Form extends Component {
             maxLength='40'
             value={name}
             required
-            onChange={this.handleChange}
+            onChange={onHandleChange}
           />
         </div>
         <div className="container">
@@ -28,7 +29,7 @@ export default class Form extends Component {
             name='email'
             maxLength='50'
             required
-            onChange={this.handleChange}
+            onChange={onHandleChange}
           />
         </div>
         <div className="container">
@@ -38,7 +39,7 @@ export default class Form extends Component {
             name='cpf'
             maxLength='11'
             required
-            onChange={this.handleChange}
+            onChange={onHandleChange}
           />
         </div>
         <div className="container">
@@ -49,7 +50,7 @@ export default class Form extends Component {
             maxLength='200'
              required
              value={address}
-            onChange={this.handleChange}
+            onChange={onHandleChange}
           />
         </div>
         <div className="container">
@@ -59,8 +60,8 @@ export default class Form extends Component {
             name='city'
             maxLength='28'
             required
-            onBlur={this.handleBlur}
-            onChange={this.handleChange}
+            onBlur={onHandleBlur}
+            onChange={onHandleChange}
           />
         </div>
         <div className="container">
@@ -68,7 +69,7 @@ export default class Form extends Component {
           <select
             name='countryState'
             required
-            onChange={this.handleChange}
+            onChange={onHandleChange}
             defaultValue=''
           >
             <option value="Selecione"></option>
@@ -86,7 +87,7 @@ export default class Form extends Component {
               id='house'
               name='addressType'
               value='house'
-              onChange={this.handleChange}
+              onChange={onHandleChange}
             />
             Casa
           </label>
@@ -96,7 +97,7 @@ export default class Form extends Component {
               id='apart'
               name='addressType'
               value='apart'
-              onChange={this.handleChange}
+              onChange={onHandleChange}
             />
             Apartamento
           </label>
