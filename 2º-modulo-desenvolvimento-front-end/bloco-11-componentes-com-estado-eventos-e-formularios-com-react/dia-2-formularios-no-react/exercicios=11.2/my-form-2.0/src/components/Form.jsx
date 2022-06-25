@@ -47,6 +47,7 @@ export default class Form extends Component {
         <PersonalForm
           onHandleChange={this.handleChange}
           onHandleBlur={this.handleBlur}
+          state={this.state}
         />
         <ProfessionalForm
           onHandleChange={this.handleChange}
