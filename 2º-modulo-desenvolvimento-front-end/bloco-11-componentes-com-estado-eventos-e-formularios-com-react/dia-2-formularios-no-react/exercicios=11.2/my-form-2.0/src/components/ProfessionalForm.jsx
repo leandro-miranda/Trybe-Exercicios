@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 
 export default class ProfessionalForm extends Component {
   render() {
+    const {onHandleChange} = this.props;
     return (
       <fieldset>
         <legend>Dados Profissionais:</legend>
@@ -11,7 +12,7 @@ export default class ProfessionalForm extends Component {
             name='resume'
             maxLength='1000'
             required
-            onChange={() => { }}
+            onChange={onHandleChange}
           />
         </div>
         <div className="container">
@@ -21,7 +22,7 @@ export default class ProfessionalForm extends Component {
             name='role'
             maxLength='40'
             required
-            onChange={() => { }}
+            onChange={onHandleChange}
             onMouseEnter={() => {
               global.alert('Preencha com cuidado esta informação.');
             }}
@@ -32,7 +33,7 @@ export default class ProfessionalForm extends Component {
           <textarea
             name='roleDescription'
             maxLength='500'
-            onChange={() => { }}
+            onChange={onHandleChange}
           />
         </div>
       </fieldset>
