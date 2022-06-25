@@ -6,7 +6,7 @@ const states = ['Rio de Janeiro', 'Minas Gerais', 'Amapá', 'Amazonas',
 
 export default class Form extends Component {
   render() {
-    const { name, address } = this.state;
+    const { state: { name, address, city } } = this.props;
     const { onHandleChange, onHandleBlur } = this.props;
      return (
       <fieldset>
@@ -60,7 +60,8 @@ export default class Form extends Component {
             name='city'
             maxLength='28'
             required
-            onBlur={onHandleBlur}
+             onBlur={onHandleBlur}
+             value={city}
             onChange={onHandleChange}
           />
         </div>
