@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PersonalForm from './PersonalForm';
 import ProfessionalForm from './ProfessionalForm';
+import FormDataDisplay from './FormDataDisplay';
 
 const INITIAL_STATE = {
   name: '',
@@ -43,20 +44,32 @@ export default class Form extends Component {
     });
   }
 
+  sendForm = (event) => {
+    event.preventDefault();
+    this.setState({ submitted: true });
+  }
+
   render() {
+    const { submitted } = this.state;
     return (
-      <form>
-        <h1>Cadastro</h1>
-        <PersonalForm
-          onHandleChange={this.handleChange}
-          onHandleBlur={this.handleBlur}
-          state={this.state}
-        />
-        <ProfessionalForm
-          onHandleChange={this.handleChange}
-          onHandleBlur={this.handleBlur}
-        />
-      </form>
+      <div>
+        <form onSubmit={this.sendForm}>
+          <h1>Cadastro</h1>
+          <PersonalForm
+            onHandleChange={this.handleChange}
+            onHandleBlur={this.handleBlur}
+            state={this.state}
+          />
+          <ProfessionalForm
+            onHandleChange={this.handleChange}
+            onHandleBlur={this.handleBlur}
+          />
+          <input type="submit" value="Enviar" />
+        </form>
+        {
+          submitted && (<FormDataDisplay state={this.state}/>)
+        }
+      </div>
     );
   }
 }
