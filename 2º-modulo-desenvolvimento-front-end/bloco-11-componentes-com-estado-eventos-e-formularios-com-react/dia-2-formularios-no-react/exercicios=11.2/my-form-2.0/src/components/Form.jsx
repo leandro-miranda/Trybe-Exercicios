@@ -3,19 +3,21 @@ import React, { Component } from 'react'
 const states = ['Rio de Janeiro', 'Minas Gerais', 'Amapá', 'Amazonas',
   'São Paulo', 'Ceará', 'Distrito Federal'];
 
+const initialState = {
+  name: '',
+  email: '',
+  cpf: '',
+  address: '',
+  city: '',
+  countryState: '',
+  addressType: '',
+}
+
 export default class Form extends Component {
   constructor() {
     super()
     
-    this.state = {
-      name: '',
-      email: '',
-      cpf: '',
-      address: '',
-      city: '',
-      countryState: '',
-      addressType: '',
-    }
+    this.state = initialState;
 }
 
   render() {
