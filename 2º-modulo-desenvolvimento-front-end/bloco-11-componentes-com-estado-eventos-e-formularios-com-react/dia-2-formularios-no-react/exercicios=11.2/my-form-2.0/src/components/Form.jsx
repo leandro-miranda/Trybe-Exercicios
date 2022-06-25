@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 const states = ['Rio de Janeiro', 'Minas Gerais', 'Amapá', 'Amazonas',
   'São Paulo', 'Ceará', 'Distrito Federal'];
 
-const initialState = {
+const INITIAL_STATE = {
   name: '',
   email: '',
   cpf: '',
@@ -11,15 +11,21 @@ const initialState = {
   city: '',
   countryState: '',
   addressType: '',
-}
+};
 
 export default class Form extends Component {
-  constructor() {
-    super()
-    
-    this.state = initialState;
+  constructor(props) {
+    super(props)
+    this.state = INITIAL_STATE;
 }
 
+  changeHandle = (event) => {
+    const { name, value } = event.target;
+    this.setState({
+      [name]: value,
+    });
+  }
+  
   render() {
     return (
       <fieldset>
@@ -31,7 +37,7 @@ export default class Form extends Component {
             name='name'
             maxLength='40'
             required
-            onChange={() => {}}
+            onChange={this.changeHandle}
           />
         </div>
         <div className="container">
@@ -41,7 +47,7 @@ export default class Form extends Component {
             name='email'
             maxLength='50'
             required
-            onChange={() => {}}
+            onChange={this.changeHandle}
           />
         </div>
         <div className="container">
@@ -51,7 +57,7 @@ export default class Form extends Component {
             name='cpf'
             maxLength='11'
             required
-            onChange={() => {}}
+            onChange={this.changeHandle}
           />
         </div>
         <div className="container">
@@ -61,7 +67,7 @@ export default class Form extends Component {
             name='address'
             maxLength='200'
             required
-            onChange={() => {}}
+            onChange={this.changeHandle}
           />
         </div>
         <div className="container">
@@ -71,9 +77,8 @@ export default class Form extends Component {
             name='city'
             maxLength='28'
             required
-            // value={ currentState.city }
             onBlur={() => {}}
-            onChange={() => {}}
+            onChange={this.changeHandle}
           />
         </div>
         <div className="container">
@@ -81,7 +86,7 @@ export default class Form extends Component {
           <select
             name='countryState'
             required
-            onChange={() => { }}
+            onChange={this.changeHandle}
             defaultValue=''
           >
             <option value="Selecione"></option>
@@ -99,7 +104,7 @@ export default class Form extends Component {
               id='house'
               name='addressType'
               value='house'
-              onChange={() => {}}
+              onChange={this.changeHandle}
             />
             Casa
           </label>
@@ -109,7 +114,7 @@ export default class Form extends Component {
               id='apart'
               name='addressType'
               value='apart'
-              onChange={() => {}}
+              onChange={this.changeHandle}
             />
             Apartamento
           </label>
