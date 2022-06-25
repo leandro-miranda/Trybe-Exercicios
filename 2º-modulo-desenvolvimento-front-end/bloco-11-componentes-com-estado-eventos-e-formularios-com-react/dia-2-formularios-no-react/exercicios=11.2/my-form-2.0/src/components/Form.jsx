@@ -10,6 +10,9 @@ const INITIAL_STATE = {
   city: '',
   countryState: '',
   addressType: '',
+  resume: '',
+  role: '',
+  roleDescription: '',
 };
 
 export default class Form extends Component {
