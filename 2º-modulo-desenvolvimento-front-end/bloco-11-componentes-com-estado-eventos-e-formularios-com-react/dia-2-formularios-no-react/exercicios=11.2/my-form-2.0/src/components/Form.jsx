@@ -21,7 +21,7 @@ export default class Form extends Component {
 
   validateAddress = (address) => address.replace(/[^\w\s]/gi, '');
   
-  changeHandle = (event) => {
+  handleChange = (event) => {
     const { name } = event.target;
     let { value } = event.target;
 
@@ -32,7 +32,7 @@ export default class Form extends Component {
     });
   }
 
-  onBlurHandle = (event) => {
+  handleBlur = (event) => {
     const { name } = event.target;
     let { value } = event.target;
     if (name === 'city') value = value.match(/^\d/) ? '' : value;
@@ -54,7 +54,7 @@ export default class Form extends Component {
             maxLength='40'
             value={name}
             required
-            onChange={this.changeHandle}
+            onChange={this.handleChange}
           />
         </div>
         <div className="container">
@@ -64,7 +64,7 @@ export default class Form extends Component {
             name='email'
             maxLength='50'
             required
-            onChange={this.changeHandle}
+            onChange={this.handleChange}
           />
         </div>
         <div className="container">
@@ -74,7 +74,7 @@ export default class Form extends Component {
             name='cpf'
             maxLength='11'
             required
-            onChange={this.changeHandle}
+            onChange={this.handleChange}
           />
         </div>
         <div className="container">
@@ -85,7 +85,7 @@ export default class Form extends Component {
             maxLength='200'
              required
              value={address}
-            onChange={this.changeHandle}
+            onChange={this.handleChange}
           />
         </div>
         <div className="container">
@@ -95,8 +95,8 @@ export default class Form extends Component {
             name='city'
             maxLength='28'
             required
-            onBlur={this.onBlurHandle}
-            onChange={this.changeHandle}
+            onBlur={this.handleBlur}
+            onChange={this.handleChange}
           />
         </div>
         <div className="container">
@@ -104,7 +104,7 @@ export default class Form extends Component {
           <select
             name='countryState'
             required
-            onChange={this.changeHandle}
+            onChange={this.handleChange}
             defaultValue=''
           >
             <option value="Selecione"></option>
@@ -122,7 +122,7 @@ export default class Form extends Component {
               id='house'
               name='addressType'
               value='house'
-              onChange={this.changeHandle}
+              onChange={this.handleChange}
             />
             Casa
           </label>
@@ -132,7 +132,7 @@ export default class Form extends Component {
               id='apart'
               name='addressType'
               value='apart'
-              onChange={this.changeHandle}
+              onChange={this.handleChange}
             />
             Apartamento
           </label>
