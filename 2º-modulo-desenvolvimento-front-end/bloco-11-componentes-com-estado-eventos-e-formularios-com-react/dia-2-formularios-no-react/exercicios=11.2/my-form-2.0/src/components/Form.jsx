@@ -19,15 +19,31 @@ export default class Form extends Component {
     this.state = INITIAL_STATE;
 }
 
+  validateAddress = (address) => address.replace(/[^\w\s]/gi, '');
+  
   changeHandle = (event) => {
-    const { name, value } = event.target;
+    const { name } = event.target;
+    let { value } = event.target;
+
+    if (name === 'name') value = value.toUpperCase();
+    if (name === 'address') value = this.validateAddress(value)
+    this.setState({
+      [name]: value,
+    });
+  }
+
+  onBlurHandle = (event) => {
+    const { name } = event.target;
+    let { value } = event.target;
+    if (name === 'city') value = value.match(/^\d/) ? '' : value;
     this.setState({
       [name]: value,
     });
   }
   
   render() {
-    return (
+    const { name, address } = this.state;
+     return (
       <fieldset>
         <legend>Dados Pessoais</legend>
         <div className="container">
@@ -36,6 +52,7 @@ export default class Form extends Component {
             type='name'
             name='name'
             maxLength='40'
+            value={name}
             required
             onChange={this.changeHandle}
           />
@@ -66,7 +83,8 @@ export default class Form extends Component {
             type='text'
             name='address'
             maxLength='200'
-            required
+             required
+             value={address}
             onChange={this.changeHandle}
           />
         </div>
@@ -77,7 +95,7 @@ export default class Form extends Component {
             name='city'
             maxLength='28'
             required
-            onBlur={() => {}}
+            onBlur={this.onBlurHandle}
             onChange={this.changeHandle}
           />
         </div>
