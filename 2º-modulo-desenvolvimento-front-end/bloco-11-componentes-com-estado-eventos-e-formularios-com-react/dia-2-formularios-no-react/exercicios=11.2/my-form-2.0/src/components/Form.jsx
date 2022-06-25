@@ -4,6 +4,18 @@ const states = ['Rio de Janeiro', 'Minas Gerais', 'Amapá', 'Amazonas',
   'São Paulo', 'Ceará', 'Distrito Federal'];
 
 export default class Form extends Component {
+  constructor() {
+    super()
+    
+    this.state = {
+      name: '',
+      email: '',
+      cpf: '',
+
+    }
+
+}
+
   render() {
     return (
       <fieldset>
@@ -55,7 +67,7 @@ export default class Form extends Component {
             name='city'
             maxLength='28'
             required
-            value={ currentState.city }
+            // value={ currentState.city }
             onBlur={() => {}}
             onChange={() => {}}
           />
@@ -95,6 +107,7 @@ export default class Form extends Component {
               value='apart'
               onChange={() => {}}
             />
+            Apartamento
           </label>
         </div>
       </fieldset>
