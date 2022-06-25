@@ -11,9 +11,11 @@ export default class Form extends Component {
       name: '',
       email: '',
       cpf: '',
-
+      address: '',
+      city: '',
+      countryState: '',
+      addressType: '',
     }
-
 }
 
   render() {
