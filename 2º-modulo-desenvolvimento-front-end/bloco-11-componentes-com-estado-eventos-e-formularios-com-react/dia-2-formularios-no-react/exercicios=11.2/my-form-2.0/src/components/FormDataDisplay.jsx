@@ -13,7 +13,7 @@ export default class FormDataDisplay extends Component {
         <h2>Dados enviados</h2>
         <h3>Pessoal</h3>
         <div>
-          <p>{`Name: ${name}`}</p>
+          <p>{`Nome: ${name}`}</p>
           <p>{`Email: ${email}`}</p>
           <p>{`CPF: ${cpf}`}</p>
           <p>{`Endereço: ${address}`}</p>
