@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PersonalForm from './PersonalForm';
 import ProfessionalForm from './ProfessionalForm';
 import FormDataDisplay from './FormDataDisplay';
+import '../styles/App.css'
 
 const INITIAL_STATE = {
   name: '',
