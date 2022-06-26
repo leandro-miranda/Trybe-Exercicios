@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import '../styles/App.css'
 
 const states = ['Rio de Janeiro', 'Minas Gerais', 'Amapá', 'Amazonas',
   'São Paulo', 'Ceará', 'Distrito Federal'];
