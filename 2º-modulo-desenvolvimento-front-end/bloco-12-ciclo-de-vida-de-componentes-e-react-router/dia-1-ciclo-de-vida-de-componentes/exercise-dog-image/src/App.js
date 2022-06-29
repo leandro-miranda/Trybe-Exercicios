@@ -6,12 +6,24 @@ export default class App extends Component {
     super();
     this.state = {
       data: '',
+      name: '',
+      array: [],
     };
   }
 
   componentDidMount() {
     // Solicita a imagem assim que a página for renderizada
+    // Se já temos uma imagem guardada, vamos mostrá-la em vez de pedir uma nova
+    if(localStorage.namedDogUrl) {
+      const parseStorage = JSON.parse(localStorage.namedDogUrl);
+      const lastDog = parseStorage[parseStorage.length - 1].message;
+      this.setState({
+        array: parseStorage,
+        data: {message: lastDog},
+      });
+    } else {
     this.fetchDog();
+    }
   }
 
   shouldComponentUpdate(nextProps, nextState) {
