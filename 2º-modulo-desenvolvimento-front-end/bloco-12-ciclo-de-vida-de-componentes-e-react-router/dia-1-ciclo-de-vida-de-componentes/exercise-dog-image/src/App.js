@@ -23,7 +23,7 @@ export default class App extends Component {
   render() {
     return (
       const {data} = this.state
-      
+      // Enquanto a requisição é feita, o texto `'Loading...'` aparece
     );
   }
 }
