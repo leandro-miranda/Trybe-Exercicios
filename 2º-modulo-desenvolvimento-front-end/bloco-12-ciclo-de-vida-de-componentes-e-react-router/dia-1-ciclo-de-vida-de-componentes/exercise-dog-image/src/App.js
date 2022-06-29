@@ -14,6 +14,14 @@ export default class App extends Component {
     this.fetchDog();
   }
 
+  shouldComponentUpdate(nextProps, nextState) {
+    // Não atualize o componente se o doguinho for terrier
+    if(nextState.data.message.includes('terrier')) {
+      return false;
+    }
+    return true;
+  }
+
   fetchDog = () => {
     fetch('https://dog.ceo/api/breeds/image/random')
     .then((response) => response.json())
