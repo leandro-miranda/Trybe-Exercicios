@@ -27,7 +27,8 @@ export default class App extends Component {
     // Guardando a URL do último doguinho no `localStorage`...
     localStorage.setItem("dogUrl", data.message);
     const dogBreed = data.message.split('/')[4];
-    
+    // ... e mostrando a raça dele usando um `alert`
+    alert(dogBreed);
   }
 
   fetchDog = () => {
