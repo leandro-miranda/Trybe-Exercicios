@@ -22,6 +22,14 @@ export default class App extends Component {
     return true;
   }
 
+  componentDidUpdate() {
+    const {data} = this.state;
+    // Guardando a URL do último doguinho no `localStorage`...
+    localStorage.setItem("dogUrl", data.message);
+    const dogBreed = data.message.split('/')[4];
+    
+  }
+
   fetchDog = () => {
     fetch('https://dog.ceo/api/breeds/image/random')
     .then((response) => response.json())
