@@ -49,6 +49,21 @@ export default class App extends Component {
     .then((result) => this.setState({ data: result}));
   }
 
+  saveData = () => {
+    const {
+      data: {message},
+      name,
+      array,
+    } = this.state;
+// atualizando e guardando a lista inteira de imagens no `localStorage`
+    const dogData = {message, nome};
+    const newArray = [...array, dogData];
+    this.setState({array: newArray});
+    this.setState({name: ''});
+    localStorage.setItem("namedDogUrl", JSON.stringify(newArray));
+
+  }
+  
   render() {
     const {data} = this.state
     // Enquanto a requisição é feita, o texto `'Loading...'` aparece
