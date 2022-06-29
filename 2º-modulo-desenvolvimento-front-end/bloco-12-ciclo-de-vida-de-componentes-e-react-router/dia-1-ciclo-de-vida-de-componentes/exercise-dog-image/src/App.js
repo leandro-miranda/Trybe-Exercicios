@@ -56,16 +56,16 @@ export default class App extends Component {
       array,
     } = this.state;
 // atualizando e guardando a lista inteira de imagens no `localStorage`
-    const dogData = {message, nome};
+    const dogData = {message, name};
     const newArray = [...array, dogData];
     this.setState({array: newArray});
     this.setState({name: ''});
     localStorage.setItem("namedDogUrl", JSON.stringify(newArray));
 
   }
-  
+
   render() {
-    const {data} = this.state
+    const {data, name} = this.state
     // Enquanto a requisição é feita, o texto `'Loading...'` aparece
     if(data === '') return 'Loading...';
     return (
@@ -74,7 +74,16 @@ export default class App extends Component {
         {/* Adiciona um botão para buscar mais um _doguinho_. */}
         <button type='button' onClick={this.fetchDog}>Novo doguinho</button>
         <div>
-          <img src={data.message} alt="Random dog"/>
+          <input 
+            type="text"
+            value={ name }
+            onChange={(element) => this.setState({name: element.target.value})}
+            placeholder='Digite o nome do doguinho'
+          />
+          <button type='button' onClick={this.saveData}>Salvar doguinho!</button>
+        </div>
+        <div>
+          <img src={data.message} alt={data.message}/>
         </div>
       </div>
     );
