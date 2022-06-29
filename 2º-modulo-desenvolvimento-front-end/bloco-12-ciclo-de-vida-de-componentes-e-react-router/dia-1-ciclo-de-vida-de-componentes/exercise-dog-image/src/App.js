@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import './App.css'
+// import './App.css'
 
 export default class App extends Component {
   constructor(){
@@ -25,7 +25,14 @@ export default class App extends Component {
     // Enquanto a requisição é feita, o texto `'Loading...'` aparece
     if(data === '') return 'Loading...';
     return (
-      
+      <div>
+        <p>Doguinhos</p>
+        {/* Adiciona um botão para buscar mais um _doguinho_. */}
+        <button type='button' onClick={this.fetchDog}>Novo doguinho</button>
+        <div>
+          <img src={data.message} alt="Random dog"/>
+        </div>
+      </div>
     );
   }
 }
