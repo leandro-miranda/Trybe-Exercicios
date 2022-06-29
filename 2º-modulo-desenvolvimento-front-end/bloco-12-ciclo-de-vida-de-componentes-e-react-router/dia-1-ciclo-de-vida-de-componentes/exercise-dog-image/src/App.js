@@ -21,9 +21,11 @@ export default class App extends Component {
   }
 
   render() {
+    const {data} = this.state
+    // Enquanto a requisição é feita, o texto `'Loading...'` aparece
+    if(data === '') return 'Loading...';
     return (
-      const {data} = this.state
-      // Enquanto a requisição é feita, o texto `'Loading...'` aparece
+      
     );
   }
 }
