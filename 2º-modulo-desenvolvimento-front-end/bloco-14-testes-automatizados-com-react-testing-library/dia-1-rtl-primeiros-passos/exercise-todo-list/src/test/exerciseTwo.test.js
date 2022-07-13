@@ -23,3 +23,10 @@ describe('Testa a aplição, e o input', () => {
     });
   });
 });
+
+describe('Testa o Componente item', () => {
+  test('Ao receber uma string na props ela precisa aparecer na tela', () => {
+    render(<Item content="Limpar a casa" />);
+    expect(screen.getByText('Limpar a casa')).toBeInTheDocument();
+  });
+});
