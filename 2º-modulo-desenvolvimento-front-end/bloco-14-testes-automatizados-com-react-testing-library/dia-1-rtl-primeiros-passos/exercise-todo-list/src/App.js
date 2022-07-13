@@ -8,17 +8,26 @@ class App extends Component {
 
     this.state = {
       listTodo: [],
+      selectedTodo: null,
     };
-
-    this.addTodo = this.addTodo.bind(this);
   }
 
-  addTodo(todo) {
+  addTodo = (todo) => {
     this.setState((state) => ({ listTodo: [...state.listTodo, todo] }));
   }
 
+  selectedTodo = (indexTodo) => {
+    this.setState({ selectedTodo: indexTodo });
+  }
+
+  removeTodo = (indexTodo) => {
+    this.setState((prevState) => ({
+      listTodo: prevState.listTodo.filter((_, index) => index !== indexTodo),
+    }));
+  }
+
   render() {
-    const { listTodo } = this.state;
+    const { listTodo, selectedTodo } = this.state;
     return (
       <main className="App">
         <InputTodo addTodo={ (todo) => this.addTodo(todo) } />
@@ -26,6 +35,21 @@ class App extends Component {
           { listTodo.map((todo, index) => (
             <li key={ index + 1 }>
               <Item content={ todo } />
+
+              <button
+                type="button"
+                onClick={ () => this.selectedTodo(index) }
+              >
+                Selecionar
+              </button>
+
+              <button
+                type="button"
+                disabled={ !(selectedTodo && selectedTodo === index) }
+                onClick={ () => this.removeTodo(index) }
+              >
+                Remover
+              </button>
             </li>
           )) }
         </ul>
