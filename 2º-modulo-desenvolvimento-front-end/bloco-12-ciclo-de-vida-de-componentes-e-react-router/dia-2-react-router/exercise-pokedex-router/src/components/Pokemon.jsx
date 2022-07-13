@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import '../styles/pokemon.css';
 import { Link } from 'react-router-dom';
 import { pokemonType } from '../types';
@@ -36,13 +37,15 @@ class Pokemon extends React.Component {
     );
   }
 }
+
 Pokemon.propTypes = {
   isFavorite: PropTypes.bool.isRequired,
-  pokemon: pokemonType.isRequired,
   showDetailsLink: PropTypes.bool,
+  pokemon: pokemonType.isRequired,
 };
 
 Pokemon.defaultProps = {
   showDetailsLink: true,
 };
+
 export default Pokemon;
