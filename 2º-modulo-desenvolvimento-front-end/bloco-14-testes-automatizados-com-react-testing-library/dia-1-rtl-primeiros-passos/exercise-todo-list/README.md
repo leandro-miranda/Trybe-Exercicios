@@ -1,4 +1,3 @@
-Esse é um projeto para o conteúdo sobre `RTL`.
 ### COMEÇANDO OS EXERCÍCIOS
 
 #### Exercício 1
