@@ -74,14 +74,14 @@ As cores criadas randomicamente devem ser armazenadas no array. Dessa forma, com
           case 'RANDOM_COLOR':
           return {
             ...state,
-            colors: [...state.colors, criarCor()]
+            colors: [...state.colors, criarCor()],
             index: state.colors.length
           };
         default:
           return state;
       }
-    }
-    const store = Redux.createStore();
+    };
+    const store = Redux.createStore(reducer);
 
     const btnPrevious = document.getElementById('previous')
     const btnNext = document.getElementById('next')
