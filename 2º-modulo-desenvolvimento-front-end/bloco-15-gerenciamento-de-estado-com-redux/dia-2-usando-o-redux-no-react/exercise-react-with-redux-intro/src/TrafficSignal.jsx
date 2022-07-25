@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { changeSignal } from './redux/actions';
+import { changeSignal as changeSignalAction } from './redux/actions';
 import redSignal from './images/redSignal.jpeg';
 import greenSignal from './images/greenSignal.jpeg';
 import yellowSignal from './images/yellowSignal.jpeg';
@@ -31,7 +31,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  changeSignal: (...payload) => dispatch(changeSignal(...payload)),
+  changeSignal: (...payload) => dispatch(changeSignalAction(...payload)),
 });
 
 TrafficSignal.propTypes = {
