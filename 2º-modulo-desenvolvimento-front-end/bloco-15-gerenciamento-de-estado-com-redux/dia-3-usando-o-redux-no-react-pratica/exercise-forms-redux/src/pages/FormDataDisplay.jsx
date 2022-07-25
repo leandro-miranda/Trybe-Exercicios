@@ -5,7 +5,6 @@ import { connect } from 'react-redux';
 class FormDataDisplay extends Component {
   render() {
     const { personalData, profissionalData } = this.props;
-    console.log(personalData);
     const { name,
       email,
       cpf,
