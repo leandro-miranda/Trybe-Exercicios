@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import carBlue from './images/carBlue.jpeg';
 import carRed from './images/carRed.jpeg';
 import carYellow from './images/carYellow.jpeg';
-import {moveCar} from './redux/actions';
+import { moveCar as moveCarAction } from './redux/actions';
 
 function Cars({
   redCar, blueCar, yellowCar, moveCar,
@@ -68,7 +68,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  moveCar: (...payload) => dispatch(moveCar(...payload))
+  moveCar: (...payload) => dispatch(moveCarAction(...payload)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Cars);
