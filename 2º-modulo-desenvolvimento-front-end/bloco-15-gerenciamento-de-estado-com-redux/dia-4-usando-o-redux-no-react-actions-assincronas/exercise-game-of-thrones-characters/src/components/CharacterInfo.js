@@ -32,7 +32,7 @@ const mapStateToProps = ({characterReducer: {loading, character, error}}) => ({
 export default connect(mapStateToProps)(CharacterInfo);
 
 //faça as propTypes
-CharacterInfo.PropTypes = {
+CharacterInfo.propTypes = {
   loading: propTypes.bool.isRequired,
   character: propTypes.arrayOf(propTypes.object),
   error: propTypes.string,

@@ -64,6 +64,6 @@ const mapDispatchToProps = (dispatch) => ({
 export default connect(null, mapDispatchToProps)(SearchForm);
 
 //faça as proptypes da ação oriunda do thunk
-SearchForm.PropTypes = {
+SearchForm.propTypes = {
   importedThunk: propTypes.func.isRequired
 };
