@@ -1,4 +1,4 @@
-import { REGISTER_COSTUMER, LOGIN } from "./types";
+import { REGISTER_COSTUMER, LOGIN } from './types';
 
 export const registerCostumer = (costumerData) => ({
   type: REGISTER_COSTUMER,
