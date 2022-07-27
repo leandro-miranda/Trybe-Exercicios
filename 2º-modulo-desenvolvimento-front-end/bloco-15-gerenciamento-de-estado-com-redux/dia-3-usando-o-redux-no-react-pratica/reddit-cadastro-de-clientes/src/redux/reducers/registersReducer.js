@@ -1,4 +1,4 @@
-import { REGISTER_COSTUMER } from '../actions/types';
+import { REGISTER_COSTUMER, DELETE_COSTUMER } from '../actions/types';
 
 const INITIAL_STATE = [];
 
@@ -14,6 +14,8 @@ function registersReducer(state = INITIAL_STATE, action) {
           id: lastCostumerId + 1
         }
       ];
+      case DELETE_COSTUMER:
+        return state.filter((costumer) => costumer.id !== action.payload.costumerId);
       default:
         return state;
   }
