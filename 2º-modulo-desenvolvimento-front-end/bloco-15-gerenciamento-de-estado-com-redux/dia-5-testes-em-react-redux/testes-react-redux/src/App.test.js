@@ -17,7 +17,7 @@ const renderWithRedux = (
   store});
 
   describe('testing clicks', () => {
-    beforeEach(cleanup);
+    beforeEach(cleanup); // Executa uma função antes que qualquer um dos testes seja executado e limpa
     test('the page should have a button and a text 0', () => {
       renderWithRedux(<App />);
       const buttonAdicionar = screen.queryByText('Clique aqui');
