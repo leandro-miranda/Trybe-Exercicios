@@ -6,6 +6,7 @@ import Home from '.pages/Home';
 import Login from '.pages/Login';
 import Register from '.pages/Register';
 import CostumersList from '.pages/CostumersList';
+import './App.css';
 
 export default class App extends Component {
   render() {
