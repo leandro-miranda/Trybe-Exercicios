@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React, { useContext } from 'react';
 import { Context } from './context/Context';
 import redSignal from './images/redSignal.jpeg';
 import yellonSignal from './images/yellowSignal.jpeg';
@@ -12,8 +12,8 @@ function renderSignal(signalColor) {
 };
 
 const TrafficSignal = () => {
-  const {signal, changeSignal} = useContext(Context);
-  const {color} = signal;
+  const { signal, changeSignal } = useContext(Context);
+  const { color } = signal;
 }
 
 return (
@@ -21,13 +21,13 @@ return (
     <div className="button-container">
       <button onClick={() => changeSignal('red')} type="button">
         Red
-        </button>
+      </button>
       <button onClick={() => changeSignal('yellow')} type="button">
         Yellow
-        </button>
+      </button>
       <button onClick={() => changeSignal('green')} type="button">
         Green
-        </button>
+      </button>
     </div>
     <img className="signal" src={renderSignal(color)} alt="" />
   </div>
