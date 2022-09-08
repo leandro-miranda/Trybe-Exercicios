@@ -1,0 +1,46 @@
+FROM alpine:3.14
+CMD ["echo", "Olá mundo!"]
+
+# Ao executar essa imagem como um container com o comando docker run --rm exemplo-cmd, sem passar nenhum parâmetro extra, temos:
+# pessoa@trybe:~$ docker run --rm exemplo-cmd
+# Olá mundo!
+# pessoa@trybe:~$
+
+# Agora, ao executar essa imagem como um container com o comando docker run --rm exemplo-cmd echo "Sou diferente!", temos:
+# pessoa@trybe:~$ docker run --rm exemplo-cmd echo "Sou diferente!"
+# Sou diferente!
+# pessoa@trybe:~$
+# Perceba que o conteúdo de CMD foi totalmente substituído.
+
+
+# Agora, vamos mudar este Dockerfile de CMD para ENTRYPOINT, de modo a construir essa imagem com o nome de exemplo-entrypoint:
+FROM alpine:3.14
+ENTRYPOINT ["echo", "Olá mundo!"]
+
+# Ao executar essa imagem como um container com o comando docker run --rm exemplo-entrypoint, sem passar nenhum parâmetro extra, temos:
+# pessoa@trybe:~$ docker run --rm exemplo-entrypoint
+# Olá mundo!
+# pessoa@trybe:~$
+
+#  Agora, ao executar essa imagem como um container com o comando docker run --rm exemplo-entrypoint "Sou diferente!", temos:
+# pessoa@trybe:~$ docker run --rm exemplo-entrypoint "Sou diferente!"
+# Olá mundo! Sou diferente!
+# pessoa@trybe:~
+# Perceba que o conteúdo de ENTRYPOINT não é substituído e que o parâmetro "Sou diferente" é colocado depois do comando do ENTRYPOINT. Isso significa que o container executou o comando echo "Olá mundo!" "Sou diferente".
+
+
+# Agora, vamos mudar este Dockerfile para usar CMD e ENTRYPOINT ao mesmo tempo, de modo a construir essa imagem com o nome de exemplo-entrypoint-cmd:
+FROM alpine:3.14
+ENTRYPOINT ["echo"]
+CMD ["Sou a mensagem padrão."]
+
+# Ao executar essa imagem como um container com o comando docker run --rm exemplo-entrypoint-cmd, sem passar nenhum parâmetro extra, temos:
+# pessoa@trybe:~$ docker run --rm exemplo-entrypoint-cmd
+# Sou a mensagem padrão.
+# pessoa@trybe:~$
+
+# Agora, ao executar essa imagem como um container com o comando docker run --rm exemplo-entrypoint-cmd "Sou uma mensagem nova!", temos:
+# pessoa@trybe:~$ docker run --rm exemplo-entrypoint-cmd "Sou uma mensagem nova!"
+# Sou uma mensagem nova!
+# pessoa@trybe:~$
+# Podemos usar ENTRYPOINT para dizer exatamente o que deve ser executado ao iniciar a imagem como um container. Também podemos usar o CMD como uma sugestão de parâmetros padrão.
