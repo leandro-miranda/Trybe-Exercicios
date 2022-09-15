@@ -24,7 +24,7 @@ ENTRYPOINT ["nginx", "-g", "daemon off;"]
 # Veja a seguir o mesmo exemplo de Dockerfile que utilizamos anteriormente, porém adaptado para fazer a construção em múltiplos estágios, e assim, usar imagens intermediárias:
 
 # Primeiro Estágio
-FROM alpine:3.14 AS primeiro-estagio
+FROM alpine:3.14 AS primeiro-estagio1
 WORKDIR /site
 
 COPY config.toml config.toml
@@ -35,7 +35,7 @@ RUN apk add hugo
 RUN hugo --minify --gc
 
 # Segundo Estágio
-FROM nginx:1.21-alpine AS segundo-estagio
+FROM nginx:1.21-alpine AS segundo-estagio1
 COPY --from=primeiro-estagio /site/public/ /usr/share/nginx/html
 ENTRYPOINT ["nginx", "-g", "daemon off;"]
 
