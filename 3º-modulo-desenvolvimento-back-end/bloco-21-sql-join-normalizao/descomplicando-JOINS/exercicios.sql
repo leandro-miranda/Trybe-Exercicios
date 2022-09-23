@@ -1,4 +1,4 @@
--- Faça os exercícios 1 a 5 utilizando banco de dados Pixar abaixo:
+-- Faça os exercícios 1 a 6 utilizando banco de dados Pixar abaixo:
 DROP SCHEMA IF EXISTS Pixar;
 CREATE SCHEMA Pixar;
 USE Pixar;
@@ -128,3 +128,22 @@ FROM
 RIGHT JOIN
     movies m ON t.id = m.theater_id
 ORDER BY t.name;
+
+
+-- 🚀 Exercício 6: Utilizando o INNER JOIN, selecione todas as informações dos filmes que estão em cartaz (possuem theater_id diferente de NULL) com avaliação maior que 8.
+USE pixar;
+
+SELECT
+    m.id,
+    m.title,
+    m.director,
+    m.year,
+    m.length_minutes,
+    m.theater_id
+FROM
+    movies m
+INNER JOIN
+    boxoffice b ON b.movie_id = m.id
+WHERE
+    b.rating > 8
+        AND m.theater_id IS NOT NULL;
