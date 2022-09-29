@@ -17,7 +17,7 @@ const app = express();
 
 app.use(express.json());
 
-// app.get('/teams', (_req, res) => res.status(200).json({teams}));
+app.get('/teams', (_req, res) => res.status(200).json({teams}));
 
 app.post('/teams', (req, res) => {
   const newTeam = {...req.body};
