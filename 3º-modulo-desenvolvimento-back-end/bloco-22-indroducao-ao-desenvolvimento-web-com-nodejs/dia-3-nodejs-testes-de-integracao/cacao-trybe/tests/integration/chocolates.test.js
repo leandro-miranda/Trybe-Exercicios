@@ -113,6 +113,15 @@ describe('Testando a API Cacao Trybe', function () {
       ]);
     });
   });
+
+  describe('Usando o método GET em chocolates/total', function () {
+    it('Retorna a quantidade total de chocolates', async function () {
+      const response = await chai.request(app).get('/chocolates/total');
+
+      expect(response.status).to.be.equal(200);
+      expect(response.body).to.deep.equal({totalChocolates: 4});
+    });
+  });
 });
 
 //  A função restore() desempenha um papel muito importante quando utilizamos stubs, pois é ela que vai garantir que o stub de um teste não seja replicado para os testes seguintes.
