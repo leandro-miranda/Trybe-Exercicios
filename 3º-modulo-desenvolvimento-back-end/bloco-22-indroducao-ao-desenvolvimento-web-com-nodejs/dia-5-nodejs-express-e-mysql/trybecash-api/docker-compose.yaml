@@ -1,0 +1,21 @@
+version: '3'
+services:
+  database:
+    image: mysql:8.0.29
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: trybecashdb
+    ports:
+      - "33061:3306"
+
+
+# No arquivo docker-compose.yaml criado, foi definido um serviço chamado database. Esse serviço inicializará um container Docker com a imagem do Servidor MySQL versão 8.0.29.
+
+# O parâmetro restart define a política de reinício do container como always. Assim, o container sempre será reiniciado automaticamente em caso de parada. Na seção environment foi definido o valor de duas variáveis dentro do container:
+
+# MYSQL_ROOT_PASSWORD: Essa variável define a senha do usuário root do MySQL (será a senha que utilizaremos para acessar o MySQL);
+# MYSQL_DATABASE: Essa variável define o nome do banco de dados que será criado ao iniciar MySQL, caso o mesmo não exista.
+# Já a seção ports está vinculando uma porta do seu computador local (a porta 33060) a uma porta dentro do container (a porta 3306).
+
+# ⚠️ Atenção: estamos utilizando a porta 33060 como a porta vinculada ao seu computador local com o container MySQL, com a intenção de evitar um possível conflito de portas caso você possua uma instalação do MySQL em seu computador usando a porta 3306! 😉
