@@ -1,0 +1,18 @@
+const path = require('path');
+
+module.exports = {
+  'config': path.resolve('src', 'config', 'config.js'),
+  'models-path': path.resolve('src', 'models'),
+  'seeders-path': path.resolve('src', 'seeders'),
+  'migrations-path': path.resolve('src', 'migrations'),
+};
+
+// path: é um módulo interno do Node que nos fornece alguns utilitários para trabalharmos com caminhos de arquivos e diretórios;
+
+// config: é um caminho para o arquivo de configuração;
+
+// models-path: é um caminho para o diretório de models;
+
+// seeders-path: é um caminho para o diretório de seeders;
+
+// migrations-path: é um caminho para o diretório de migrations.

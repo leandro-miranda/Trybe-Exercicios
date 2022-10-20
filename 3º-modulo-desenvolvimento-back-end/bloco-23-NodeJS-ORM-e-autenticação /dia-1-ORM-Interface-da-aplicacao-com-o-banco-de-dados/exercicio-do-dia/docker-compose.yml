@@ -1,0 +1,11 @@
+version: '3'
+services:
+  database:
+    image: mysql:8.0.29
+    restart: always
+    container_name: books
+    environment:
+      MYSQL_ROOT_PASSWORD: 'root'
+      MYSQL_DATABASE: books
+    ports:
+      - 3306:3306
