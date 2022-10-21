@@ -5,14 +5,14 @@ module.exports = (sequelize, DataTypes) => {
   );
 
   PatientSurgery.associate = (models) => {
-    models.Surgery.belongToMany(models.Patient, {
+    models.Surgery.belongsToMany(models.Patient, {
       as: 'patients',
       through: PatientSurgery,
       foreignKey: 'surgery_id',
       otherKey: 'patient_id',
     });
 
-    models.Patient.belongtoMany(models.Surgery, {
+    models.Patient.belongsToMany(models.Surgery, {
       as: 'surgeries',
       through: PatientSurgery,
       foreignKey: 'patient_id',
@@ -21,4 +21,4 @@ module.exports = (sequelize, DataTypes) => {
   };
 
   return PatientSurgery;
-}
+};
