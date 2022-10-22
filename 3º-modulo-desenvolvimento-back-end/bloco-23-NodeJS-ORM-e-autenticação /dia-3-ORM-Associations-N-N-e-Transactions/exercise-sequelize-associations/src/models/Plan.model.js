@@ -1,13 +1,12 @@
 module.exports = (sequelize, DataTypes) => {
-  const Plan = sequelize.define('Plan', {
-    plan_id: { type: DataTypes.INTEGER, primaryKey: true },
-    coverage: DataTypes.STRING,
-    price: DataTypes.DOUBLE,
-  },
+  const Plan = sequelize.define(
+    'Plan',
     {
-      timestamps: false,
-      underscored: true,
+      plan_id: { type: DataTypes.INTEGER, primaryKey: true },
+      coverage: DataTypes.STRING,
+      price: DataTypes.DOUBLE,
     },
+    { timestamps: false }
   );
 
   Plan.associate = (models) => {
@@ -15,4 +14,4 @@ module.exports = (sequelize, DataTypes) => {
   };
 
   return Plan;
-}
+};

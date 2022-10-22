@@ -3,7 +3,8 @@ const { Patient, Plan } = require('../models');
 const getAllPlans = async (req, res) => {
   try {
     const listOfPlans = await Plan.findAll({
-      where: { planId: req.params.id },
+      // eslint-disable-next-line camelcase
+      where: { plan_id: req.params.id },
       include: [{ model: Patient, as: 'patients' }],
     });
 

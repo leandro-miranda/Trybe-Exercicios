@@ -1,10 +1,8 @@
-module.exports = (sequelize, _DataTypes) => {
-  const PatientSurgery = sequelize.define('PatientSurgery',
+module.exports = (sequelize, DataTypes) => {
+  const PatientSurgery = sequelize.define(
+    'Patient_surgery',
     {},
-    {
-      timestamps: false,
-      underscored: true,
-    },
+    { timestamps: false }
   );
 
   PatientSurgery.associate = (models) => {
@@ -14,7 +12,6 @@ module.exports = (sequelize, _DataTypes) => {
       foreignKey: 'surgery_id',
       otherKey: 'patient_id',
     });
-
     models.Patient.belongsToMany(models.Surgery, {
       as: 'surgeries',
       through: PatientSurgery,

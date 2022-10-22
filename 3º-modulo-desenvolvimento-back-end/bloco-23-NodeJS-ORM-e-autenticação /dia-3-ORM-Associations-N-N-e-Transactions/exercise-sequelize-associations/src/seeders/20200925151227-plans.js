@@ -8,7 +8,8 @@ module.exports = {
         {
           coverage: 'Total',
           price: 549.99,
-        },        {
+        },
+        {
           coverage: 'Partial',
           price: 349.99,
         },
