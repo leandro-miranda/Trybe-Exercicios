@@ -1,4 +1,4 @@
-module.exports = (sequelize, DataTypes) => {
+module.exports = (sequelize, _DataTypes) => {
   const PatientSurgery = sequelize.define('PatientSurgery',
     {},
     { timestamps: false },
