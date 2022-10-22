@@ -1,7 +1,10 @@
 module.exports = (sequelize, _DataTypes) => {
   const PatientSurgery = sequelize.define('PatientSurgery',
     {},
-    { timestamps: false },
+    {
+      timestamps: false,
+      underscored: true,
+    },
   );
 
   PatientSurgery.associate = (models) => {
