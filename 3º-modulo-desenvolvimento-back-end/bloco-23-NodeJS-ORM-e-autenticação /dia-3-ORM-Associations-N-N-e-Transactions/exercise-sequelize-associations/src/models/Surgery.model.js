@@ -4,7 +4,10 @@ module.exports = (sequelize, DataTypes) => {
     specialty: DataTypes.STRING,
     doctor: DataTypes.STRING,
   },
-    { timestamps: false },
+    {
+      timestamps: false,
+      underscored: true,
+    },
   );
 
   return Surgery;

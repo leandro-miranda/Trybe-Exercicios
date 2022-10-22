@@ -23,6 +23,6 @@ app.get('/surgeries/nodoctor', getPatientsAndSurgeriesNoDoctor);
 
 app.get('/surgeries/:name', getDoctorSurgeries);
 
-app.get('/:id', getAllPlans);
+app.get('/plans/:id', getAllPlans);
 
 module.exports = app;
