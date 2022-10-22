@@ -4,7 +4,10 @@ module.exports = (sequelize, DataTypes) => {
     coverage: DataTypes.STRING,
     price: DataTypes.DOUBLE,
   },
-    { timestamps: false }
+    {
+      timestamps: false,
+      underscored: true,
+    },
   );
 
   Plan.associate = (models) => {
