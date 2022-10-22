@@ -8,7 +8,10 @@ module.exports = (sequelize, DataTypes) => {
     fullName: DataTypes.STRING,
     plan_id: { type: DataTypes.INTEGER, foreignKey: true },
   },
-    { timestamps: false }
+    {
+      timestamps: false,
+      underscored: true,
+    },
   );
 
   Patient.associate = (models) => {
