@@ -1,0 +1,25 @@
+"use strict";
+// Agora, vamos fazer algumas chamadas ao nosso módulo de área 
+exports.__esModule = true;
+var Exercise = require("./exercises");
+console.log(Exercise.greeter('Maria'));
+console.log(Exercise.personAge('Maria', 40));
+console.log("A soma do array \u00E9 igual a ".concat(Exercise.sumArray([3, 6, 9])));
+console.log("Tri\u00E2ngulo de base 10cm e altura 25cm: ".concat(Exercise.triangle(10, 25), "cm\u00B2"));
+console.log("Tri\u00E2ngulo de base 5cm e altura 30cm: ".concat(Exercise.triangle(5, 30), "cm\u00B2"));
+console.log("Tri\u00E2ngulo de base 100cm e altura 200cm: ".concat(Exercise.triangle(100, 200), "cm\u00B2"));
+console.log("Quadrado de lado 10cm: ".concat(Exercise.square(10), "cm\u00B2"));
+console.log("Quadrado de lado 5cm: ".concat(Exercise.square(5), "cm\u00B2"));
+console.log("Quadrado de lado 100cm: ".concat(Exercise.square(100), "cm\u00B2"));
+console.log("Ret\u00E2ngulo de base 10cm e altura 25cm: ".concat(Exercise.rectangle(10, 25), "cm\u00B2"));
+console.log("Ret\u00E2ngulo de base 5cm e altura 30cm: ".concat(Exercise.rectangle(5, 30), "cm\u00B2"));
+console.log("Ret\u00E2ngulo de base 100cm e altura 200cm: ".concat(Exercise.rectangle(100, 200), "cm\u00B2"));
+console.log("Losango com diagonais iguais a 32cm e 18cm: ".concat(Exercise.rhombus(32, 18), "cm\u00B2"));
+console.log("Losango com diagonais iguais a 200cm e 50cm: ".concat(Exercise.rhombus(200, 50), "cm\u00B2"));
+console.log("Losango com diagonais iguais a 75cm e 25cm: ".concat(Exercise.rhombus(75, 25), "cm\u00B2"));
+console.log("Trap\u00E9zio com base maior igual a 100cm, base menor igual a 70cm e altura igual a 50cm: ".concat(Exercise.trapezoid(100, 70, 50), "cm\u00B2"));
+console.log("Trap\u00E9zio com base maior igual a 75cm, base menor igual a 50cm e altura igual a 35cm: ".concat(Exercise.trapezoid(75, 50, 35), "cm\u00B2"));
+console.log("Trap\u00E9zio com base maior igual a 150cm, base menor igual a 120cm e altura igual a 80cm: ".concat(Exercise.trapezoid(150, 120, 80), "cm\u00B2"));
+console.log("C\u00EDrculo com raio igual a 25cm: ".concat(Exercise.circle(25), "cm\u00B2"));
+console.log("C\u00EDrculo com raio igual a 100cm: ".concat(Exercise.circle(100), "cm\u00B2"));
+console.log("C\u00EDrculo com raio igual a 12,5cm: ".concat(Exercise.circle(12.5), "cm\u00B2"));
