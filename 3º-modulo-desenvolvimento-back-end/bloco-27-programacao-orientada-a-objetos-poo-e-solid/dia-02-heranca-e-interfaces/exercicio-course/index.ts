@@ -1,5 +1,6 @@
 import Person from "./Person";
 import Student from "./Student";
+import Employee from "./Employee";
 
 const leandro = new Person("Leandro Miranda", new Date("1983/07/25"));
 const maisa = new Person("Maisa Miranda", new Date("1989/11/29"));
@@ -30,3 +31,17 @@ console.log(studentMaisa);
 console.log(studentOsvaldo);
 console.log(studentMariaFernanda);
 console.log(studentMariaAlice);
+
+const testInterfaceEmployee: Employee = {
+  registration: "FNC1234567891011",
+  salary: 3500.00,
+  admissionDate: new Date(),
+
+  generateRegistration(): string {
+    const randomStr = String(Date.now() * (Math.random() + 1)).replace(/\W/g, '');
+
+    return `FNC${randomStr}`;
+  },
+};
+
+console.log(testInterfaceEmployee);
