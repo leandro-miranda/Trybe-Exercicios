@@ -1,14 +1,14 @@
 class Estudante {
   private _matricula: string;
   private _nome: string;
-  private _notasDeProvas: number[];
-  private _notasDeTrabalhos: number[];
+  private _notasDeProvas: number[] = Array();
+  private _notasDeTrabalhos: number[] = Array();
 
-  constructor(matricula: string, nome: string){
+  constructor(matricula: string, nome: string, notasDeProvas: number[], notasDeTrabalhos: number[]) {
     this._matricula = matricula;
     this._nome = nome;
-    this._notasDeProvas = [];
-    this._notasDeTrabalhos = [];
+    this.notasDeProvas = notasDeProvas;
+    this.notasDeTrabalhos = notasDeTrabalhos;
   }
 
   get matricula(): string {
@@ -35,7 +35,7 @@ class Estudante {
   }
 
   set notasDeProvas(value: number[]) {
-    if (value.length > 4) {
+    if (value.length !== 4) {
       throw new Error('O estudante não pode ter mais que 4 notas de provas');
     }
     this._notasDeProvas = value;
@@ -46,14 +46,14 @@ class Estudante {
   }
 
   set notasDeTrabalhos(value: number[]) {
-    if (value.length > 2) {
+    if (value.length !== 2) {
       throw new Error('O estudante não pode ter mais que 2 notas de trabalhos');
     }
     this._notasDeTrabalhos = value;
   }
 
     somaDeNotas(): number {
-      return [...this._notasDeProvas, ...this._notasDeTrabalhos]
+      return [...this.notasDeProvas, ...this.notasDeTrabalhos]
         .reduce((acc, cur) => {
           const proximaNota = acc + cur;
           
@@ -63,7 +63,7 @@ class Estudante {
 
     somaNotaMedia(): number {
       const somaDeNotas = this.somaDeNotas();
-      const dividir = this._notasDeProvas.length + this._notasDeTrabalhos.length;
+      const dividir = this.notasDeProvas.length + this.notasDeTrabalhos.length;
 
       return Math.round(somaDeNotas / dividir);
     }
@@ -72,7 +72,7 @@ class Estudante {
 
 
 // Para testar!
-const estudante = new Estudante('202001011', 'João');
+const estudante = new Estudante('202001011', 'João', [25, 20, 23, 23], [45, 45]);
 
 estudante.notasDeProvas = [25, 20, 23, 23];
 estudante.notasDeTrabalhos = [45, 45];
@@ -81,5 +81,7 @@ console.log(estudante);
 console.log('Soma de todas as notas: ', estudante.somaDeNotas());
 console.log('Média de todas as notas: ', estudante.somaNotaMedia());
 
-const estudante2 = new Estudante('202001012', 'Jo');
+const estudante2 = new Estudante('202001012', 'Jo', [30, 21, 23, 19],  [35, 50]);
 console.log(estudante2);
+console.log('Soma de todas as notas: ', estudante2.somaDeNotas());
+console.log('Média de todas as notas: ', estudante2.somaNotaMedia());
