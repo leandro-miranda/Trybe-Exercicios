@@ -1,6 +1,8 @@
 import Person from "./Person";
 import Student from "./Student";
 import Employee from "./Employee";
+import Subject from "./Subject";
+import Teacher from "./Teacher";
 
 const leandro = new Person("Leandro Miranda", new Date("1983/07/25"));
 const maisa = new Person("Maisa Miranda", new Date("1989/11/29"));
@@ -45,3 +47,27 @@ const testInterfaceEmployee: Employee = {
 };
 
 console.log(testInterfaceEmployee);
+
+const math = new Subject("Matemática");
+const story = new Subject("História");
+const philosophy = new Subject("Filosofia");
+
+const marta = new Teacher("Marta", new Date('1980/03/30'), 3500, math);
+const joao = new Teacher("João", new Date('1982/04/21'), 3500, story);
+const maria = new Teacher("Maria", new Date('1986/01/29'), 3500, philosophy);
+
+console.log(math);
+console.log(story);
+console.log(philosophy);
+
+console.log(marta);
+console.log(joao);
+console.log(maria);
+
+
+// gera um erro
+// const invalidSubjectName = new Subject("M");
+// console.log(invalidSubjectName);
+
+
+
