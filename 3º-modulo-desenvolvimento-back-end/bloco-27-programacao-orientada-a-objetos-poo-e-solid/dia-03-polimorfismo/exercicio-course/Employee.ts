@@ -7,6 +7,8 @@
 // `Methods`:
 //     - generateRegistration: retorna uma string única gerada como registro
 
+import Person from "./Person";
+import Enrollable from "./Enrollable";
 export default interface Employee {
   registration: string;
   salary: number;
