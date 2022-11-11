@@ -72,21 +72,21 @@ class CharacterService {
 }
 
 // Refatore CharacterService para que possa receber uma instância de qualquer classe que implemente a interface IModel.
-class CharacterService {
-  constructor(readonly model: IModel) { }
+// class CharacterService {
+//   constructor(readonly model: IModel) { }
 
-  async create(character: Character) {
-    const newCharacter = await this.model.create(character);
-    return ({ status: 201, data: newCharacter });
-  }
+//   async create(character: Character) {
+//     const newCharacter = await this.model.create(character);
+//     return ({ status: 201, data: newCharacter });
+//   }
 
-  async getAll() {
-    const allCharacter = await this.model.getAll();
-    return ({ status: 200, data: allCharacter });
-  }
+//   async getAll() {
+//     const allCharacter = await this.model.getAll();
+//     return ({ status: 200, data: allCharacter });
+//   }
 
   /* Implementação dos outros métodos */
-}
+// }
 
 // Crie uma classe MockedDbModel que implemente IModel com uma versão mock.
 class MockDbModel implements IModel {
