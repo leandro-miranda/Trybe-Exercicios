@@ -19,14 +19,16 @@
 //     - A pessoa estudante deve possuir no máximo 2 notas de trabalhos
 
 import Person from "./Person";
+import Enrollable from "./Enrollable";
 
-export default class Student extends Person {
+export default class Student extends Person implements Enrollable {
   private _enrollment = String();
   private _examsGrades: number[] = [];
   private _worksGrades: number[] = [];
 
   constructor(name: string, birthDate: Date) {
     super(name, birthDate);
+
     this.enrollment = this.generateEnrollment();
   }
 
@@ -37,6 +39,7 @@ export default class Student extends Person {
   //esse método checa se a inscrição da pessoa estudante possui no mínimo 16 caracteres
   set enrollment(enrollment: string) {
     if (enrollment.length < 16) throw new Error("A matrícula deve possuir no mínimo 16 caracteres");
+
     this._enrollment = enrollment;
   }
 
@@ -46,6 +49,7 @@ export default class Student extends Person {
 
   set examsGrades(examsGrades: number[]) {
     if (examsGrades.length > 4) throw new Error("A pessoa estudante deve possuir no máximo 4 notas de provas");
+
     this._examsGrades = examsGrades;
   }
 
@@ -55,7 +59,20 @@ export default class Student extends Person {
 
   set worksGrades(worksGrades: number[]) {
     if (worksGrades.length > 2) throw new Error("A pessoa estudante deve possuir no máximo 2 notas de trabalhos");
+
     this._worksGrades = worksGrades;
+  }
+
+  sumGrades(): number {
+    return [...this.examsGrades, ...this.worksGrades]
+      .reduce((previousNote, note) => note + previousNote, 0);
+  }
+
+  sumAverageGrade(): number {
+    const sumGrades = this.sumGrades();
+    const divider = this.examsGrades.length + this.worksGrades.length;
+
+    return Math.round(sumGrades / divider);
   }
 
   //esse método gera um id de inscrição aleatório baseado na data de cadastro da pessoa estudante
