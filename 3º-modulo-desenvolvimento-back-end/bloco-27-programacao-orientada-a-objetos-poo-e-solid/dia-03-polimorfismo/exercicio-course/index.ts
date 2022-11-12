@@ -1,6 +1,6 @@
-import Person from "./Person";
+// import Person from "./Person";
 import Student from "./Student";
-import Employee from "./Employee";
+// import Employee from "./Employee";
 import Subject from "./Subject";
 import Teacher from "./Teacher";
 
@@ -36,19 +36,19 @@ console.log(studentOsvaldo);
 console.log(studentMariaFernanda);
 console.log(studentMariaAlice);
 
-const testInterfaceEmployee: Employee = {
-  registration: "FNC1234567891011",
-  salary: 3500.00,
-  admissionDate: new Date(),
+// const testInterfaceEmployee: Employee = {
+//   registration: "FNC1234567891011",
+//   salary: 3500.00,
+//   admissionDate: new Date(),
 
-  generateRegistration(): string {
-    const randomStr = String(Date.now() * (Math.random() + 1)).replace(/\W/g, '');
+//   generateRegistration(): string {
+//     const randomStr = String(Date.now() * (Math.random() + 1)).replace(/\W/g, '');
 
-    return `FNC${randomStr}`;
-  },
-};
+//     return `FNC${randomStr}`;
+//   },
+// };
 
-console.log(testInterfaceEmployee);
+// console.log(testInterfaceEmployee);
 
 const math = new Subject("Matemática");
 const story = new Subject("História");
