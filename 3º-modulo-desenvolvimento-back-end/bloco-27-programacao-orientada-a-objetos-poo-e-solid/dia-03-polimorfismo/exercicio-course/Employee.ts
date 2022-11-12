@@ -59,6 +59,6 @@ export default class Employee extends Person implements Enrollable {
   generateEnrollment(): string {
     const randomStr = String(Date.now() * (Math.random() + 1)).replace(/\W/g, '');
 
-    return `STU${randomStr}`;
+    return `FUNC${randomStr}`;
   }
 }
