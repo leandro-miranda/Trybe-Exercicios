@@ -45,7 +45,7 @@ export default abstract class Person {
     if (value.getTime() > new Date().getTime()) {
       throw new Error('Data de nascimento não pode ser maior que a data atual');
     }
-    if (Person.getAge(value) < 120) {
+    if (Person.getAge(value) > 120) {
       throw new Error('A pessoa deve ter no máximo 120 anos.');
     }
   }
