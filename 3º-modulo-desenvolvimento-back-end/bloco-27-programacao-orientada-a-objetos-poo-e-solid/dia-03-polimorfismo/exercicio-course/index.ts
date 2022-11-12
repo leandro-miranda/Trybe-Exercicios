@@ -24,10 +24,10 @@ const studentOsvaldo = new Student("Osvaldo Nogueira", new Date("2004/06/06"));
 const studentMariaFernanda = new Student("Maria Fernanda Sousa", new Date("2005/08/08"));
 const studentMariaAlice = new Student("Maria Alice Salgueiro", new Date("2007/10/11"));
 
-studentLeandro.examsGrades = [10, 9, 8, 7];
-studentMaisa.examsGrades = [10, 9, 8, 7];
-studentOsvaldo.worksGrades = [10, 9];
-studentMariaFernanda.worksGrades = [10, 8];
+studentLeandro.addEvaluationResult = [10, 9, 8, 7];
+studentMaisa.addEvaluationResult = [10, 9, 8, 7];
+studentOsvaldo.addEvaluationResult = [10, 9];
+studentMariaFernanda.addEvaluationResult = [10, 8];
 // studentMariaAlice.worksGrades = [10, 9, 7]; gera um erro
 
 console.log(studentLeandro);
