@@ -22,16 +22,17 @@
 
 import Person from "./Person";
 import Enrollable from "./Enrollable";
+import EvaluationResult from "./EvaluationResult";
 
 export default class Student extends Person implements Enrollable {
   private _enrollment = String();
-  private _examsGrades: number[] = [];
-  private _worksGrades: number[] = [];
+  private _evaluationResult: EvaluationResult[];
 
   constructor(name: string, birthDate: Date) {
     super(name, birthDate);
 
     this.enrollment = this.generateEnrollment();
+    this._evaluationResult = [];
   }
 
   get enrollment(): string {
@@ -45,34 +46,39 @@ export default class Student extends Person implements Enrollable {
     this._enrollment = enrollment;
   }
 
-  get examsGrades(): number[] {
-    return this._examsGrades;
+  // get examsGrades(): number[] {
+  //   return this._examsGrades;
+  // }
+
+  // set examsGrades(examsGrades: number[]) {
+  //   if (examsGrades.length > 4) throw new Error("A pessoa estudante deve possuir no máximo 4 notas de provas");
+
+  //   this._examsGrades = examsGrades;
+  // }
+
+  // get worksGrades(): number[] {
+  //   return this._worksGrades;
+  // }
+
+  // set worksGrades(worksGrades: number[]) {
+  //   if (worksGrades.length > 2) throw new Error("A pessoa estudante deve possuir no máximo 2 notas de trabalhos");
+
+  //   this._worksGrades = worksGrades;
+  // }
+
+  get evaluationResult(): EvaluationResult[] {
+    return this._evaluationResult;
   }
 
-  set examsGrades(examsGrades: number[]) {
-    if (examsGrades.length > 4) throw new Error("A pessoa estudante deve possuir no máximo 4 notas de provas");
-
-    this._examsGrades = examsGrades;
-  }
-
-  get worksGrades(): number[] {
-    return this._worksGrades;
-  }
-
-  set worksGrades(worksGrades: number[]) {
-    if (worksGrades.length > 2) throw new Error("A pessoa estudante deve possuir no máximo 2 notas de trabalhos");
-
-    this._worksGrades = worksGrades;
-  }
 
   sumGrades(): number {
-    return [...this.examsGrades, ...this.worksGrades]
-      .reduce((previousNote, note) => note + previousNote, 0);
+    return [...this._evaluationResult]
+      .reduce((previousNote, note) => note.score + previousNote, 0);
   }
 
   sumAverageGrade(): number {
     const sumGrades = this.sumGrades();
-    const divider = this.examsGrades.length + this.worksGrades.length;
+    const divider = this._evaluationResult.length;
 
     return Math.round(sumGrades / divider);
   }
@@ -82,5 +88,9 @@ export default class Student extends Person implements Enrollable {
     const randomStr = String(Date.now() * (Math.random() + 1)).replace(/\W/g, '');
 
     return `STU${randomStr}`;
+  }
+
+  addEvaluationResult(value: EvaluationResult): void {
+    this._evaluationResult.push(value);
   }
 }
