@@ -1,22 +1,24 @@
-// 🚀 Exercício 2: Refatore nossa classe de pessoa estudante para que ela herde da nossa classe pessoa.
+// 🚀 Exercício 2: Notamos também que tanto nossa classe de pessoa estudante quanto a classe de pessoa professora possuem um método parecido, que retorna uma string única gerada para servir de identificador daquele tipo de pessoa (respectivamente, a matrícula e o registro). Para termos mais reuso de código e adequar melhor nosso sistema à POO:
+// A: Transforme nossa interface de pessoa funcionária em uma classe de pessoa funcionária que herda da nossa classe pessoa.
+// B: Faça com que nossa classe de pessoa professora herde da classe de pessoa funcionária.
+// C: Por último crie uma nova interface que será implementada por nossas classes pessoa estudante e pessoa funcionária que dirá que a instância delas deve ser matriculável.
+// Nossa nova modelagem para esses componentes ficará assim:
 // `Class`: Student
 // `Extends`: Person
+// `Implements`: Enrollable
 // `Attributes`:
-//     - enrollment: matrícula da pessoa estudante
 //     - examsGrades: notas de provas
 //     - worksGrades: notas de trabalhos
 // `Methods`:
 //     - Getters/Setters
-//     - constructor: deve receber como parâmetro nome e data de nascimento e
-//       preencher a matrícula automaticamente
+//     - constructor: deve receber como parâmetro nome e data de nascimento e preencher a matrícula automaticamente
 //     - sumGrades: retorna a soma das notas da pessoa estudante
 //     - sumAverageGrade: retorna a média das notas da pessoa estudante
-//     - generateEnrollment: retorna uma string única gerada
-//       como matrícula para a pessoa estudante
 // `Validations`:
 //     - A matrícula deve possuir no mínimo 16 caracteres
 //     - A pessoa estudante deve possuir no máximo 4 notas de provas
-//     - A pessoa estudante deve possuir no máximo 2 notas de trabalhos
+//     - A pessoa estudante deve possuir no máximo 2 nostas de trabalhos
+
 
 import Person from "./Person";
 import Enrollable from "./Enrollable";
