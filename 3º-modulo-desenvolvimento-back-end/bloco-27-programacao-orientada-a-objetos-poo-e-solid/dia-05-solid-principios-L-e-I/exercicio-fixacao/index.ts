@@ -85,11 +85,11 @@ class ShippedItem {
 
 class Flight {
   // Primeiro, ajustamos o construtor da classe Flight para suportar tanto passageiros quanto cargas
-  constructor(public num:number, public payload:(Passenger | ShippedItem)[]) { }
+  constructor(public num: number, public payload: (Passenger | ShippedItem)[]) { } 
 
   // A função Add agora poderá adicionar tanto passageiros quanto cargas
-  Add(newPayload:Passenger | ShippedItem): void {
-    this.payload.push(newPayload); 
+  Add(newPayload: Passenger | ShippedItem): void {
+    this.payload.push(newPayload);
   }
 
   // De igual modo, a função Remove pode remover tanto passageiros quanto cargas
@@ -131,14 +131,14 @@ class TravelingCompany extends Company {
 }
 
 class ShippingCompany extends Company {
-  AddToFlight(flightNum:number, item:ShippedItem): void {
+  AddToFlight(flightNum: number, item: ShippedItem): void {
     const currentFlight = this.flights.find((f) => f.num === flightNum);
     if (currentFlight) {
       currentFlight.Add(item);
     }
-  }
+  }  
 
-  RemoveToFlight(flightNum:number, item:ShippedItem): void {
+  RemoveToFlight(flightNum: number, item: ShippedItem): void {
     const currentFlight = this.flights.find((f) => f.num === flightNum);
     if (currentFlight) {
       currentFlight.Remove(item);
