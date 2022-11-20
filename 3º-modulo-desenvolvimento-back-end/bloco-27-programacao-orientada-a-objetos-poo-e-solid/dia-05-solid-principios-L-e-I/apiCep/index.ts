@@ -1,4 +1,3 @@
-// import { readline } from 'readline-sync';
 import FooCepAPI from './FooCepAPI';
 import CepService from './CepService';
 
