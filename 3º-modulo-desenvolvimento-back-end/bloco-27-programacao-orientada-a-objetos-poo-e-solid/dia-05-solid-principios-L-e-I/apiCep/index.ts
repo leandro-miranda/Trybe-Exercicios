@@ -1,7 +1,6 @@
 import FooCepAPI from './FooCepAPI';
 import CepService from './CepService';
-
-const readline = require('readline-sync');
+import readline from 'readline-sync';
 
 async function main() {
   const cepSvc = new CepService(new FooCepAPI());
