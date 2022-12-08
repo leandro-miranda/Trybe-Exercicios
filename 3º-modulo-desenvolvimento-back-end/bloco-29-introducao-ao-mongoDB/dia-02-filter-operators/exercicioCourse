@@ -1,0 +1,4 @@
+use class;
+
+db.superheroes.findOne();
+db.superheroes.countDocuments({});
