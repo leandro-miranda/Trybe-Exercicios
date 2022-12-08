@@ -1,7 +1,8 @@
 // no vscode \/
-// use("aula_29_2");
-use aula-filter-operators
+// use aula-filter-operators
+use("aula_11_2");
 
+// db.dropDatabase(); // apaga o banco de dados
 db.filmes.drop();
 
 db.filmes.insertMany(
@@ -47,3 +48,114 @@ db.filmes.insertMany(
 );
 
 db.filmes.countDocuments({});
+
+db.filmes.find();
+
+// Filmes que foram lançados antes do ano 2000
+db.filmes.find({ ano: { $lt: 2000 } });
+
+// Filmes que foram lançados no ano 2000 ou antes
+db.filmes.find({ ano: { $lte: 2000 } });
+
+// Filmes que foram lançados depois do ano 1993
+db.filmes.find({ ano: { $gt: 1993 } });
+
+// Filmes que foram lançados a partir 1993
+db.filmes.find({ ano: { $gte: 1993 } });
+
+// Filmes que foram lançados de 1993 até 2000
+db.filmes.find({ ano: { $gte: 1993, $lte: 2000 } });
+
+// Filmes que foram lançados em 1993
+db.filmes.find({ ano: 1993 });
+//ou
+db.filmes.find({ ano: { $eq: 1993 } });
+
+// Filmes que tem 7 avaliações boas
+db.filmes.find({ 'avaliacao.bom': 7 });
+
+// Filmes que não tem 8 avaliações ruins
+db.filmes.find({ 'avaliacao.ruim': { $ne: 8 } });
+
+// Filmes que foram lançados em 2001, 1968 ou 1995
+db.filmes.find({ ano: { $in: [2001, 1968, 1995] } });
+
+// Filmes que não foram lançados nem em 2013, nem em 2008
+db.filmes.find({ ano: { $nin: [2013, 2008] } });
+
+// Filmes que foram lançados nos anos posteriores a 2000 e receberam a partir de 8 avaliações boas
+db.filmes.find({ ano: { $gt: 2000 }, 'avaliacao.bom': { $gte: 8 } });
+//ou
+db.filmes.find({ $and: [
+    { ano: { $gt: 2000 } }, 
+    { 'avaliacao.bom': { $gte: 8 } }
+  ] 
+});
+
+// Filmes que foram lançados nos anos posteriores a 2000 ou receberam a partir de 8 avaliações boas
+db.filmes.find({ 
+  $or: [
+    { ano: { $gt: 2000 } }, 
+    { 'avaliacao.bom': { $gte: 8 } }
+  ] 
+});
+
+// Filmes que não foram dirigidos pelo Michael Bay
+db.filmes.find({ diretor: { $ne: 'Michael Bay' } });
+// ou
+db.filmes.find({ diretor: { $not: { $eq: 'Michael Bay' } } });
+
+// Filmes que não foram dirigidos pelo Michael Bay e que não receberam 10 avaliações ruin
+db.filmes.find({ 
+  $and: [
+    { diretor: { $ne: 'Michael Bay' } }, 
+    { 'avaliacao.ruim': { $ne: 10 } }
+  ] 
+});
+// ou
+db.filmes.find({ 
+  $and: [
+    { diretor: { $not: { $eq: 'Michael Bay' } } }, 
+    { 'avaliacao.ruim': { $not: { $eq: 10 } } }
+  ] 
+});
+// ou
+db.filmes.find({
+  $nor: [
+    { diretor: 'Michael Bay' }, 
+    { 'avaliacao.ruim': 10 }
+  ]
+});
+
+// Ordenar os filmes pelo título em ordem crescente
+db.filmes.find().sort({ titulo: 1 });
+
+// Ordenar os filmes pela quantidade de avaliações boas em ordem decrescente
+db.filmes.find().sort({ 'avaliacao.bom': -1 });
+
+// Ordenar os filmes pela quantidade de avaliações ruins em ordem crescente e, em caso de empate, pela quantidade de avaliações boas em ordem decrescente
+db.filmes.find().sort({ 'avaliacao.ruim': 1, 'avaliacao.bom': -1 });
+
+// Ordenar pelo filmes mais recentes, e os que estiverem no mesmo ano, em ordem alfabética 
+db.filmes.find().sort({ ano: -1, titulo: 1 });
+
+// Todos os registros que contenham o campo avaliacao
+db.filmes.find({ avaliacao: { $exists: true } });
+
+// Todos os registros que não contenham o campo avaliacao
+db.filmes.find({ avaliacao: { $exists: false } });
+
+// Todos os registros que contenham o campo avaliacao e que tenham a chave bom
+db.filmes.find({ 'avaliacao.bom': { $exists: true } });
+
+// Delete o filme que foi lançado em 1993
+db.filmes.deleteOne({ ano: 1993 });
+
+// Delete o filme que foi lançado em 1993 e que foi dirigido por Steven Spielberg
+db.filmes.deleteOne({ ano: 1993, diretor: 'Steven Spielberg' });
+
+// Delete todos os filmes que foram lançados antes de 2000
+db.filmes.deleteMany({ ano: { $lt: 2000 } });
+
+// Delete todos os filmes que foram lançados antes de 2000 e que receberam mais de 8 avaliações boas
+db.filmes.deleteMany({ ano: { $lt: 2000 }, 'avaliacao.bom': { $gt: 8 } });
