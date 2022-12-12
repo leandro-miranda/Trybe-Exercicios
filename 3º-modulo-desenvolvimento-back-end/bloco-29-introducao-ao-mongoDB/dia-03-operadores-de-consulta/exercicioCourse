@@ -1,6 +1,6 @@
 // Para cada execução, utilize o método find() para conferir as alterações nos documentos
 
-use cinema;
+use('cinema');
 db.movies.drop();
 db.movies.insertMany([
   {
