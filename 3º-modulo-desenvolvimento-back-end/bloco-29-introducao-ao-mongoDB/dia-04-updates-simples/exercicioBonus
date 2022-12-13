@@ -1,4 +1,4 @@
-use class;
+use('class');
 db.xmen.insertMany([
   {
     "name": "Tempestade",
