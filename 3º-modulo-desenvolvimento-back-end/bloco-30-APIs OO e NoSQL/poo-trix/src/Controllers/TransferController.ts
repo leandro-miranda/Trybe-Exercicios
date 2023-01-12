@@ -1,7 +1,7 @@
 import { NextFunction, Request, Response } from 'express';
 import IPayment from '../Interfaces/IPayment';
 import TransferService from '../Services/TransferService';
-import PaymentStatus from '../utils/PaymentStatus';
+import PaymentStatus from '../Domain/PaymentStatus';
 
 class TransferController {
   private req: Request;

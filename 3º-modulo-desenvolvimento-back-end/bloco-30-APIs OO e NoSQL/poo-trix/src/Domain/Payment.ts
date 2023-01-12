@@ -1,4 +1,4 @@
-import PaymentStatus from '../utils/PaymentStatus';
+import PaymentStatus from './PaymentStatus';
 
 class Payment {
   private id: string | undefined; // undefined se os dados não estiverem no banco (Ex.: antes do cadastro)
