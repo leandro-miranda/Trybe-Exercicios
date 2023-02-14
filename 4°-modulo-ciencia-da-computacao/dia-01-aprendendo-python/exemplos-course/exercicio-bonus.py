@@ -42,7 +42,7 @@ def triangulo(n):
         print('*' * i)
 
 
-triangulo(5)
+triangulo(10)
 
 # Exercício 3: Crie uma função que receba um número inteiro N e retorne o
 # somatório de todos os números de 1 até N. Por exemplo,
