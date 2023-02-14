@@ -114,3 +114,40 @@ print(paint_costs(108))
 #   Triângulo Equilátero: três lados iguais;
 #   Triângulo Isósceles: quaisquer dois lados iguais;
 #   Triângulo Escaleno: três lados diferentes.
+
+def tipo_triangulo(lado1, lado2, lado3):
+    nao_triangulo = (
+            lado1 + lado2 < lado3 or
+            lado2 + lado3 < lado1 or
+            lado1 + lado3 < lado2
+    )
+    if nao_triangulo:
+        return "Não é triângulo"
+    elif lado1 == lado2 == lado3:
+        return "Triângulo Equilátero"
+    elif lado1 == lado2 or lado1 == lado3 or lado2 == lado3:
+        return "Triângulo Isósceles"
+    return "Triângulo Escaleno"
+
+
+print(tipo_triangulo(1, 2, 3))
+
+
+# ou
+def type_of_triangle(side1, side2, side3):
+    is_triangle = (
+            side1 + side2 > side3 and
+            side2 + side3 > side1 and
+            side1 + side3 > side2
+    )
+    if not is_triangle:
+        return "não é triângulo"
+    elif side1 == side2 == side3:
+        return "equilátero"
+    elif side1 == side2 or side2 == side3 or side1 == side3:
+        return "isósceles"
+    else:
+        return "escaleno"
+
+
+print(type_of_triangle(1, 1, 1))
