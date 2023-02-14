@@ -60,11 +60,47 @@ def maior_nome(nomes):
 
 print(maior_nome(["José", "Lucas", "Nádia", "Fernanda", "Cairo", "Joana"]))
 
+
 # Exercício 5: Considere que a cobertura da tinta é de 1 litro para cada 3
 # metros quadrados e que a tinta é vendida em latas de 18 litros,
 # que custam R$ 80,00. Crie uma função que retorne dois valores em uma tupla
 # contendo a quantidade de latas de tinta a serem compradas e o preço total a
 # partir do tamanho de uma parede (em m²).
+def calcula_quantidade_e_preco(tamanho_parede):
+    quantidade_latas = tamanho_parede / (18 * 3)
+    preco_total = quantidade_latas * 80
+    return quantidade_latas, preco_total
+
+
+print(calcula_quantidade_e_preco(108))
+
+
+# ou
+def paint_costs(area):
+    can_price = 80
+    required_liters = area / 3
+    required_cans = required_liters // 18
+    if required_liters % 18:
+        required_cans += 1
+    return required_cans, required_cans * can_price
+
+
+print(paint_costs(108))
+
+
+# usando math.ceil
+# import math
+
+
+# def paint_costs(area):
+#     can_price = 80
+#     required_liters = area / 3
+#     required_cans = math.ceil(required_liters / 18)
+#     return required_cans, required_cans * can_price
+
+
+# print(paint_costs(108))
+
 
 # Exercício 6: Crie uma função que receba os três lado de um triângulo e
 # informe qual o tipo de triângulo formado ou "não é triangulo", caso não seja
