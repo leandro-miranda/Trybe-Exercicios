@@ -123,13 +123,15 @@
   Se quiser saber mais sobre a instalação de dependências com `pip`, veja esse [artigo](https://medium.com/python-pandemonium/better-python-dependency-and-package-management-b5d8ea29dff1).
 </details>
 
-# Exercícios
+<details>
+  # Exercícios
 
-## 1 - Crie uma função que receba dois números e retorne o maior deles
-> **Implemente em:** `src/biggest_number.py`
+  ## 1 - Crie uma função que receba dois números e retorne o maior deles
+  > **Implemente em:** `src/biggest_number.py`
 
-## 2 - Calcule a média aritmética dos valores contidos em uma lista
-> **Implemente em:** `src/average.py`
+  ## 2 - Calcule a média aritmética dos valores contidos em uma lista
+  > **Implemente em:** `src/average.py`
 
-## 3 - Crie uma função que receba uma lista de nomes e retorne o nome com a maior quantidade de caracteres.
-> **Implemente em:** `src/biggest_name.py`
+  ## 3 - Crie uma função que receba uma lista de nomes e retorne o nome com a maior quantidade de caracteres.
+  > **Implemente em:** `src/biggest_name.py`
+</details>
