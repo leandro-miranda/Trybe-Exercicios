@@ -8,7 +8,17 @@ def maior_numero(numero1, numero2):
 
 print(maior_numero(10, 20))
 
+
 # 🚀 Exercício 2: Calcule a média aritmética dos valores contidos em uma lista.
+def media(lista):
+    soma = 0
+    for numero in lista:  # p/ cada numero na lista
+        soma += numero
+    return soma / len(lista)
+
+
+print(media([1, 2, 3, 4, 5]))
+
 
 # Exercício 3: Faça um programa que, dado um valor n qualquer, tal que n > 1,
 # imprima na tela um quadrado feito de asteriscos de lado de tamanho n.
@@ -26,6 +36,12 @@ print(maior_numero(10, 20))
 # blablabla. Isso se aplica a listas também, caso você precise.
 
 # Sentiu aí um certo dejavu? 😁
+def quadrado(n):
+    for i in range(n):
+        print(n * "*")
+
+
+quadrado(5)
 
 # 🚀 Exercício 4: Crie uma função que receba uma lista de nomes e retorne o nome
 # com a maior quantidade de caracteres. Por exemplo,
