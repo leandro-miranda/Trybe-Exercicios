@@ -10,6 +10,21 @@ def menor_elemento(lista):
 
 print(menor_elemento([5, 9, 3, 19, 70, 8, 100, 2, 35, 27]))
 
+
+# ou
+def minimum(numbers):
+    return min(numbers)
+
+
+print(minimum([5, 9, 3, 19, 70, 8, 100, 2, 35, 27]))
+
+# ou mesmo
+minimum = min
+
+
+print(minimum([5, 9, 3, 19, 70, 8, 100, 2, 35, 27]))
+
+
 # Exercício 2: Faça um programa que, dado um valor n qualquer,
 # tal que n > 1, imprima na tela um triângulo retângulo com n asteriscos de
 # base. Por exemplo, para n = 5 o triângulo terá 5 asteriscos na base:
@@ -22,6 +37,13 @@ print(menor_elemento([5, 9, 3, 19, 70, 8, 100, 2, 35, 27]))
 # ***
 # ****
 # *****
+def triangulo(n):
+    for i in range(1, n + 1):
+        print('*' * i)
+
+
+triangulo(5)
+
 # Exercício 3: Crie uma função que receba um número inteiro N e retorne o
 # somatório de todos os números de 1 até N. Por exemplo,
 # para N = 5, o valor esperado será 15.
