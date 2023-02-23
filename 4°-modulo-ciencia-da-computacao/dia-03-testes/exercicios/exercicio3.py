@@ -35,6 +35,7 @@ def validate_email(email):
             )
         index += 1
     index += 1  # @
+
     # validate website
     while email[index] != "." and index < len(email):
         letter = email[index]
@@ -43,8 +44,8 @@ def validate_email(email):
                 "Website should contain only letters, and digits"
             )
         index += 1
-
     index += 1  # .
+
     # validate extension
     counter = 0
     while index < len(email):
@@ -52,4 +53,5 @@ def validate_email(email):
         index += 1
     if counter > 3:
         raise ValueError("Extension maximum length is 3")
+
     return None
